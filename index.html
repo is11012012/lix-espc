@@ -46,27 +46,36 @@
     </div>
   </header>
 
-  <nav>
-    <a onclick="myFunction()" >Introdução</a>
+<nav>
+    <a onclick="myFunction()">Introdução</a>
     <div id="Demo" class="w3-dropdown-content w3-bar-block w3-card-4 w3-animate-zoom">
-    <a href="#introducao" class="w3-bar-item w3-button">O que é</a>
-    <a href="#fonte" class="w3-bar-item w3-button">Quais as fontes</a>
-    <a href="#riscos" class="w3-bar-item w3-button">Quais os riscos e impactos</a>
+        <a href="#introducao" class="w3-bar-item w3-button">O que é</a>
+        <a href="#fonte" class="w3-bar-item w3-button">Quais as fontes</a>
+        <a href="#riscos" class="w3-bar-item w3-button">Quais os riscos e impactos</a>
     </div>
-    <script>
-        function myFunction() {
+    <a href="#entrevistas">Entrevistas</a>
+        <a href="#noticias">Notícias</a>
+</nav>
+
+<script>
+    function myFunction() {
         var x = document.getElementById("Demo");
         if (x.className.indexOf("w3-show") == -1) {
             x.className += " w3-show";
-        } else { 
+        } else {
             x.className = x.className.replace(" w3-show", "");
         }
     }
-    </script>
-    <a href="#entrevistas">Entrevistas</a>
-    <a href="#noticias">Notícias</a>
-    
-</nav>
+
+    // Adicione o código a seguir para fechar o menu quando um item é clicado
+    var links = document.querySelectorAll("#Demo a");
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", function () {
+            var x = document.getElementById("Demo");
+            x.className = x.className.replace(" w3-show", "");
+        });
+    }
+</script>
 
     <div class="content" id="introducao">
         <h2>Introdução ao Lixo Espacial</h2>
